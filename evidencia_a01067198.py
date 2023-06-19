@@ -58,7 +58,7 @@ subset_data
 
 #grafica 1
 st.markdown('It is important to mention that any police district can answer to any incident, the neighborhood in which it happened is not related to the police district.')
-st.markdown('### **Crime locations in San Francisco:police_car:**')
+st.markdown('### **Crime locations in San Francisco:police_car:**') #emoji 'police car'
 st.map(subset_data)
 
 #grafica 2
@@ -83,14 +83,14 @@ if agree:
   st.markdown('### **Subtype of crimes committed**')
   st.bar_chart(subset_data['Incident Subcategory'].value_counts())
   
-#grafica nueva 3
+#grafica nueva 2
 st.markdown('### **Report Type Description**')
 fig2, ax2=plt.subplots()
 labels=subset_data['Report Type'].unique()
 ax2.pie(subset_data['Report Type'].value_counts(),labels=labels,autopct='%1.1f%%',startangle=20)
 st.pyplot(fig2)
 
-#grafica 5
+#grafica 5 con boton para su visualización
 agree = st.button('Click to see Resolution Status')
 if agree:
     st.markdown('### **Resolution status**')
