@@ -81,21 +81,23 @@ st.bar_chart(subset_data['Incident Category'].value_counts())
 agree = st.button('Click to see Incident Subcategories')
 if agree:
   st.markdown('### **Subtype of crimes committed**')
-  st.bar_chart(subset_data['Incident Category'].value_counts())
+  st.bar_chart(subset_data['Incident Subcategory'].value_counts())
   
 #grafica nueva 3
-st.markdown('### **Report Type Description Percentage**')
+st.markdown('### **Report Type Description**')
 fig2, ax2=plt.subplots()
 labels=subset_data['Report Type'].unique()
 ax2.pie(subset_data['Report Type'].value_counts(),labels=labels,autopct='%1.1f%%',startangle=20)
 st.pyplot(fig2)
 
 #grafica 5
-st.markdown('### **Resolution status**')
-fig1, ax1=plt.subplots()
-labels=subset_data['Resolution'].unique()
-ax1.pie(subset_data['Resolution'].value_counts(),labels=labels,autopct='%1.1f%%',startangle=20)
-st.pyplot(fig1)
+agree = st.button('Click to see Resolution Status')
+if agree:
+    st.markdown('### **Resolution status**')
+    fig1, ax1=plt.subplots()
+    labels=subset_data['Resolution'].unique()
+    ax1.pie(subset_data['Resolution'].value_counts(),labels=labels,autopct='%1.1f%%',startangle=20)
+    st.pyplot(fig1)
 
 
 
